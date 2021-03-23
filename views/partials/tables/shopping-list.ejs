@@ -7,13 +7,13 @@
         <th>Price</th>
     </thead>
     <tbody>
-        <% items.forEach((item) => { %>
+        <% products.forEach((product, index) => { %>
         
         <tr>
-            <td><%= item._id %></td>
-            <td><%= item.product %></td>
-            <td><%= item.qty %></td>
-            <td><%= item.price %></td>
+            <td><%= index+1 %></td>
+            <td><%= product.name %></td>
+            <td><%= product.qty %></td>
+            <td><%= product.price %></td>
         </tr>
         
         <% }); %> 

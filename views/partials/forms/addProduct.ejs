@@ -1,0 +1,45 @@
+<div id="main-row" class="col-8 offset-2 justify-content-center p-3">
+  <% if(locals.message) { %>
+  <h5><%= locals.message %></h5>
+  <% } %>
+
+  <!-- form -->
+  <form action="/addProduct" method="POST">
+    <!-- user -->
+    <div class="form-group col-10 offset-1">
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        placeholder="Product Name"
+        required
+      />
+    </div>
+    <div class="form-group col-6 offset-3">
+      <input
+        type="text"
+        class="form-control"
+        id="qty"
+        name="qty"
+        placeholder="Quantity"
+        required
+      />
+    </div>
+
+    <div class="form-group col-6 offset-3">
+      <input
+        type="text"
+        class="form-control"
+        id="price"
+        name="price"
+        placeholder="Price"
+        required
+      />
+    </div>
+
+    <div class="form-group form-btn">
+      <button type="submit" class="btn btn-primary">Add Product</button>
+    </div>
+  </form>
+</div>

@@ -10,12 +10,16 @@
     <%- include('../views/partials/nav.ejs') %>
 
     <div id="main-container" class="container">
+
+        <% if(locals.addProdForm) { %>
+            <%- include('../views/partials/forms/addProduct.ejs') %>
+        <% } %> 
         
         <div class="col-12 justify-content-center">
 
-            <% if(login){ %> 
+            <% if(locals.loginForm){ %> 
                 <%- include('../views/partials/forms/login.ejs') %>
-            <% } else if (register) { %> 
+            <% } else if (locals.registerForm) { %> 
                 <%- include('../views/partials/forms/register.ejs') %>
             <% } else { %> 
                 <%- include('../views/partials/tables/shopping-list.ejs') %>

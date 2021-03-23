@@ -9,12 +9,40 @@
         <div id="navbarSupportedContent" class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto"></ul> 
             <ul class="navbar-nav ml-auto">
+            
+                <% if(locals.user) { %>
+                <li class="nav-item dropdown"><a id="navbarDropdown" class="nav-link dropdown-toggle" 
+                    href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <%= locals.user.username %>  <span class="caret"></span></a> 
+                    
+                    <div aria-labelledby="navbarDropdown" class="dropdown-menu dropdown-menu-right">
+                    
+                        <% if(locals.user.role == 'admin') { %>
+                        <a href="/users" class="dropdown-item">
+                            Users
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <% } %> 
+                        
+                        <a href="#" 
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();" 
+                            class="dropdown-item">Logout
+                        </a> 
+                        
+                        <form id="logout-form" action="/logout" method="POST" 
+                        style="display: none;"><input type="hidden" name="_token" 
+                        value="jxq0RyJcm9Gt7D28e1b1Ot2AMmQoE6gkr4Rh5uT4"></form>
+                
+                    </div>
+                </li>
+                <% } else { %> 
                 <li class="nav-item"><a href="/register" class="nav-link">
                     Register <span id="cartBadge" class="badge badge-success"></span></a>
                 </li> 
                 <li class="nav-item"><a href="/login" class="nav-link">
                     Login <span id="cartBadge" class="badge badge-success"></span></a>
-                </li> 
+                </li>
+                <% } %> 
             </ul>
         </div>
     </div>
