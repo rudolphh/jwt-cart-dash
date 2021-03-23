@@ -119,6 +119,24 @@ app.get('/register', (req, res) => {
 });
 
 
+app.get('/users', (req, res) => {
+
+    if(!req.user || (req.user.role != 'admin'))
+        return res.redirect('/');
+
+    User.find({}, (err, users) => {
+        if(err) console.log(err);
+
+        res.render('index.ejs', {
+            user: req.user,
+            addUserForm: true,
+            registerAction: '/addUser',
+            users: users
+        });
+    });
+
+})
+
 ///////// post routes
 
 app.post('/login', (req, res) => { 
@@ -166,6 +184,22 @@ app.post('/addProduct', (req, res) => {
         res.redirect('/');
     })
 });
+
+app.post('/addUser', (req, res) => {
+
+    if(!req.user || (req.user.role != 'admin')){
+        return res.redirect('/');
+    }
+
+    req.body.password = bcrypt.hashSync(req.body.password, 8);
+    User.create(req.body, (err, product) => {
+        if(err) res.status(500).send("Error in adding user");
+
+        res.redirect('/users');
+    })
+});
+
+
 
 app.post('/logout', (req, res) => {
     localStorage.removeItem('authToken');

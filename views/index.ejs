@@ -13,6 +13,8 @@
 
         <% if(locals.addProdForm) { %>
             <%- include('../views/partials/forms/addProduct.ejs') %>
+        <% } else if (locals.addUserForm) { %> 
+            <%- include('../views/partials/forms/addUser.ejs') %> 
         <% } %> 
         
         <div class="col-12 justify-content-center">
@@ -21,6 +23,8 @@
                 <%- include('../views/partials/forms/login.ejs') %>
             <% } else if (locals.registerForm) { %> 
                 <%- include('../views/partials/forms/register.ejs') %>
+            <% } else if (locals.addUserForm) { %> 
+                <%- include('../views/partials/tables/users.ejs') %> 
             <% } else { %> 
                 <%- include('../views/partials/tables/shopping-list.ejs') %>
             <% } %> 
