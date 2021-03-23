@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head>
+    <title>Bug Tracker</title>
+
+    <%- include('../views/partials/head.ejs') %> 
+
+    <style>
+
+        table.dataTable tbody td {
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+
+    <%- include('../views/partials/nav.ejs') %>
+
+    <div id="main-container" class="container">
+
+        <div class="col-12 justify-content-center p-3">
+
+            <%- include('../views/partials/tables/bug-table-admin.ejs') %> 
+        </div>
+    </div>
+</body>
+</html>

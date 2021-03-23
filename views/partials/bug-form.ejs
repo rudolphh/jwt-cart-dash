@@ -1,0 +1,36 @@
+<div id="main-row" class="col-8 offset-2 justify-content-center p-3">
+
+    <% if(message) { %> 
+          <h5><%= message %> </h5>
+    <% } %>
+
+      <!-- form -->
+      <form action="/" method="POST">
+
+          <!-- user -->
+          <div class="form-group col-10 offset-1">
+              <input type="text" class="form-control" id="title" name="title" placeholder="title" required>
+          </div>
+          <div class="form-group">
+              <textarea class="form-control" id="description" name="description" placeholder="description" required ></textarea>
+          </div>
+
+              <input type="hidden" name="reported" value="<%= reported %>" />
+          <div class="form-group col-6 offset-3">
+              <input type="time" class="form-control" id="time"
+                      value="<%= time %>" disabled required>
+          </div>
+          <div class="form-group col-6 offset-3">
+              <input type="date" class="form-control" id="date"
+                      value="<%= date %>" disabled required>
+          </div>
+          <div class="form-group col-8 offset-2">
+            <input type="text" class="form-control" id="assignee" name="assignee" placeholder="assignee" required>
+          </div>
+
+          <div class="form-group form-btn">
+              <button type="submit" class="btn btn-primary" >Add Bug</button>
+          </div>
+
+      </form>
+  </div>

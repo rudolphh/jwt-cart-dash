@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head>
+    <title>Shopping</title>
+
+    <%- include('../views/partials/head.ejs') %> 
+
+</head>
+<body>
+
+    <%- include('../views/partials/nav.ejs') %>
+
+    <div id="main-container" class="container">
+        
+        <div class="col-12 justify-content-center">
+
+            <% if(login){ %> 
+                <%- include('../views/partials/forms/login.ejs') %>
+            <% } else if (register) { %> 
+                <%- include('../views/partials/forms/register.ejs') %>
+            <% } else { %> 
+                <%- include('../views/partials/tables/shopping-list.ejs') %>
+            <% } %> 
+
+        </div>
+
+    </div>
+</body>
+</html>

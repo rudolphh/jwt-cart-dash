@@ -1,0 +1,37 @@
+{
+  "name": "cart-dash",
+  "version": "1.0.0",
+  "description": "jwt authentication admin/user cart dashboard",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rudolphh/jwt-cart-dash.git"
+  },
+  "keywords": [
+    "jwt",
+    "node",
+    "express",
+    "bcrypt",
+    "mongoose"
+  ],
+  "author": "Rudy A Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rudolphh/jwt-cart-dash/issues"
+  },
+  "homepage": "https://github.com/rudolphh/jwt-cart-dash#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.1",
+    "node-localstorage": "^2.1.6"
+  }
+}

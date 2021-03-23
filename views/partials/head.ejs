@@ -1,0 +1,77 @@
+<link rel="stylesheet" type="text/css" href="https://datatables.net/media/css/site-examples.css?_=0602f7ec58abe00302963423bf7a8d5a">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css" />
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+<script>
+
+    $('document').ready(() => {
+
+        $('#myTable').DataTable({
+            "language": {
+                "emptyTable": "No bugs currently being tracked"
+            }
+        });
+
+    });
+</script>
+<style>
+
+    body {
+        margin: 0;
+        font-family: "Nunito", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 400;
+        line-height: 1.6;
+        color: #212529;
+        text-align: left;
+        background-color: #f8fafc;
+    }
+    
+    #main-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-top: 30px;
+    }
+
+    #main-row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #main-row h5 {
+      text-align: center;
+      color: green;
+      height: 24px;
+    }
+
+    .row .col {
+        margin-top: 5px; margin-bottom: 5px;
+    }
+
+    .table input {
+        border: 0;
+    }
+
+    .form-btn {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    input[type="date"], input[type="time"] {
+        text-align: center;
+    }
+
+    #assignee {
+        text-align: center;
+    }
+
+    input:focus::placeholder, textarea:focus::placeholder {
+        color: transparent;
+    }
+
+</style>
