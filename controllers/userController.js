@@ -21,11 +21,15 @@ router.post('/register', (req, res) => {
     }, (err, user) => {
         if(err) res.status(500).send("Error registering the user");
 
+        /*
         let token = jwt.sign({ id: user._id }, process.env.SECRET, {
             expiresIn: 86400 // expires in 24 hours
         });
 
         res.status(200).send({ auth: true, token: token });
+        */
+        res.redirect('/login');
+
     });
 });
 

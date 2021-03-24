@@ -31,7 +31,7 @@ const userController = require('./controllers/userController');
 app.use('/user', userController);
 
 const authController = require('./controllers/authController');
-app.use('api/auth', authController);
+app.use('/api/auth', authController);
 
 
 // authenticate middleware function
@@ -43,7 +43,6 @@ const authenticateJWT = (req, res, next) => {
 
     if (token) {
 
-        console.log('we have a token!');
         jwt.verify(token, accessTokenSecret, (err, user) => {
             if (err) {
                 return res.sendStatus(403);
@@ -135,7 +134,7 @@ app.get('/users', (req, res) => {
         });
     });
 
-})
+});
 
 ///////// post routes
 

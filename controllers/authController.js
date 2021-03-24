@@ -20,7 +20,8 @@ router.use('/', (req, res, next) => {
             auth: false,
             message: 'No token provided' 
         });
-    } else {
+    } else { 
+        
         jwt.verify(token, process.env.SECRET, (err, decoded) => {
             if(err) return res.status(500).send({ auth: false, message: 'Failed to authenticate token' });
             
@@ -54,11 +55,14 @@ router.post('/register', (req, res) => {
     }, (err, user) => {
         if(err) res.status(500).send("Error registering the user");
 
+        /*
         let token = jwt.sign({ id: user._id }, process.env.SECRET, {
             expiresIn: 86400 // expires in 24 hours
         });
 
         res.status(200).send({ auth: true, token: token });
+        */
+       res.redirect('/users');
     });
 });
 
